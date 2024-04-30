@@ -1,5 +1,5 @@
 title: iperf
-description: iperf windows build
+description: iperf windows builds
 show_downloads: true
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
@@ -11,5 +11,5 @@ relative_links:
 include:
   - README.md
 github:
-  zip_url: https://github.com/kdpuvvadi/iperf/releases/latest/download/iperf-3.15.zip
-  tar_url: https://github.com/kdpuvvadi/iperf/releases/latest/download/iperf-3.15.tar.gz
+  zip_url: https://github.com/kdpuvvadi/iperf/releases/download/3.16/iperf-3.16.zip
+  tar_url: https://github.com/kdpuvvadi/iperf/releases/download/3.16/iperf-3.16.tar.gz
