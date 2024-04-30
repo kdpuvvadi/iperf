@@ -5,6 +5,7 @@ iperf windows builds with GitHub actions
 ## Download
 
 * [Latest](../../releases/latest)
+* [V3.14](../../releases/3.14)
 * [V3.13](../../releases/3.13)
 
 ## uses
