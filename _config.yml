@@ -1,0 +1,15 @@
+title: iperf
+description: iperf windows build
+show_downloads: true
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+  - jekyll-relative-links
+  - jekyll-remote-theme
+relative_links:
+  enabled: true
+  collections: true
+include:
+  - README.md
+github:
+  zip_url: https://github.com/kdpuvvadi/iperf/releases/latest/download/iperf-3.13.zip
+  tar_url: https://github.com/kdpuvvadi/iperf/releases/latest/download/iperf-3.13.tar.gz

@@ -1,0 +1,36 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+body {
+  background-image: linear-gradient(45deg, #000000, #1a1a1a);
+}
+
+.page-header {
+  background-image: linear-gradient(120deg, #000000, #1a1a1a);
+}
+
+.main-content {
+  background-image: linear-gradient(45deg, #000000, #1a1a1a);
+}
+
+.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+  color: #ffffff;
+}
+
+.main-content p {
+  color: #fffff0;
+}
+
+a {
+  color: #83ff00;
+}
+
+ul li::before {
+  color:  #ffffff;
+}
+
+.site-footer {
+  color: white;
+}

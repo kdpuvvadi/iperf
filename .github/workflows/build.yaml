@@ -1,0 +1,62 @@
+name: iperf build for Windows
+on:
+  workflow_dispatch:
+  release:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+    env:
+      VERSION: 3.13
+
+    steps:
+      - name: Set msys shell
+        uses: msys2/setup-msys2@v2.22.0
+        with:
+          msystem: MSYS
+          update: true
+          install: make gcc zip git curl
+
+      - name: Checkout
+        uses: actions/checkout@v4.1.4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout iperf repo
+        uses: actions/checkout@v4.1.4
+        with:
+          repository: esnet/iperf
+          path: iperf
+          ref: ${{ env.VERSION }}
+          fetch-depth: 0
+      
+      - name: Build
+        id: build
+        run: |
+          cd ./iperf
+          git checkout ${{ env.VERSION }}
+          ./configure
+          make
+          name=iperf-${{ env.VERSION }}
+          mkdir $name
+          cp src/iperf3.exe $name/iperf.exe
+          cp /usr/bin/msys-2.0.dll $name/msys-2.0.dll
+          cp LICENSE $name/LICENSE
+          cd $name
+          zip -r $name.zip *
+          tar --exclude='*.zip' -zcvf $name.tar.gz * 
+
+      - name: Release
+        id: release
+        uses: ncipollo/release-action@v1.14.0
+        if: steps.build.outcome == 'success'
+        with:
+          allowUpdates: true
+          prerelease: false
+          tag: "${{ env.VERSION }}"
+          artifacts: |
+            ./iperf/iperf-${{ env.VERSION }}/iperf-${{ env.VERSION }}.zip
+            ./iperf/iperf-${{ env.VERSION }}/iperf-${{ env.VERSION }}.tar.gz
