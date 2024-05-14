@@ -11,5 +11,5 @@ relative_links:
 include:
   - README.md
 github:
-  zip_url: https://github.com/kdpuvvadi/iperf/releases/download/3.16/iperf-3.16.zip
-  tar_url: https://github.com/kdpuvvadi/iperf/releases/download/3.16/iperf-3.16.tar.gz
+  zip_url: https://github.com/kdpuvvadi/iperf/releases/download/3.17/iperf-3.17.zip
+  tar_url: https://github.com/kdpuvvadi/iperf/releases/download/3.17/iperf-3.17.tar.gz
