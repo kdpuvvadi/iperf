@@ -9,7 +9,7 @@ jobs:
       run:
         shell: msys2 {0}
     env:
-      VERSION: 3.17.1
+      VERSION: 3.18
 
     steps:
       - name: Set msys shell
